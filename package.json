@@ -1,0 +1,19 @@
+{
+  "name": "backend-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "grade.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimbyeolhee/BackEnd-Study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimbyeolhee/BackEnd-Study/issues"
+  },
+  "homepage": "https://github.com/kimbyeolhee/BackEnd-Study#readme"
+}
