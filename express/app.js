@@ -2,6 +2,10 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+// pug template engine 설정
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 // 메뉴 추천
 const pickMenu = () => {
     const food = ['김치찌개', '수제비', '파전', '칼국수', '순두부찌개', '부대찌개'];
