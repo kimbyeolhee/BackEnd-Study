@@ -2,6 +2,41 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+// mongoDB와 express를 연결시켜주는 모듈: mongoose
+const mongoose = require('mongoose');
+mongoose.connect("mongodb://127.0.0.1:27017/nodejs", {
+    useNewUrlParser: true,
+}).then(() => {
+    console.log("Connected to MongoDB");
+}).catch((err) => {
+    console.log(err.message);
+})
+
+// 형식 지정
+const UserSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+    saveDate: {
+        type: Date,
+        default: Date.now
+    },
+});
+
+const User = mongoose.model('User', UserSchema);
+
+const me = new User({
+    name: 'Byeol',
+    age: 25,
+});
+
+me.save()
+    .then(() => {
+        console.log(me);
+    }).catch((err) => {
+        console.log(err.mesaage);
+    })
+
+
 // pug template engine 설정
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
