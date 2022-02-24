@@ -4,7 +4,7 @@ const connect = () => {
   if (process.env.NODE_ENV !== 'production') {
     mongoose.set('debug', true);
   }
-  mongoose.connect('mongodb+srv://byeolhee:201818@kbh.rcun4.mongodb.net/', {
+  mongoose.connect(process.env.MONGODB_DOMAIN, {
     dbName: 'nodejs',
     useNewUrlParser: true,
     useCreateIndex: true,
